@@ -11,30 +11,30 @@ const {
 
 module.exports = (app) => {
 
-    app.get('/api/notes', (req, res) => {
-      // read from the json file 
-      fs.readFile('./db/db.json', (err, data) => {
+  app.get('/api/notes', (req, res) => {
+    // read from the json file 
+    fs.readFile('./db/db.json', (err, data) => {
+      if (err) throw err;
+      // parse it 
+      let notes = JSON.parse(data);
+      // respond back with it 
+      res.json(notes);
+    });
+  });
+
+  app.post('/api/notes', (req, res) => {
+    // take in user input from the req body
+    const newNote = req.body;
+    newNote.id = uuidv4();
+    fs.readFile('./db/db.json', (err, data) => {
+      if (err) throw err;
+      const notes = JSON.parse(data);
+      notes.push(newNote)
+
+      fs.writeFile('./db/db.json', JSON.stringify(notes), (err) => {
         if (err) throw err;
-        // parse it 
-        let notes = JSON.parse(data);
-        // respond back with it 
-        res.json(notes);
+        res.json(newNote)
       });
     });
-
-    app.post('/api/notes', (req, res) => {
-          // take in user input from the req body
-          const newNote = req.body;
-          newNote.id = uuidv4();
-          fs.readFile('./db/db.json', (err, data) => {
-            if (err) throw err;
-            const notes = JSON.parse(data);
-            notes.push(newNote)
-          });
-          // write it to the file (fs.writeFile)
-          fs.writeFile('./db/db.json', JSON.stringify(notes), (err) => {
-            if (err) throw err;
-            res.json(newNote)
-          });
-        })
+  });
 };
