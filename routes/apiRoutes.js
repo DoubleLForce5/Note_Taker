@@ -49,8 +49,6 @@ module.exports = (app) => {
         id
       }) => id !== chosen);
 
-      console.log(newNotesArray);
-
       fs.writeFile('./db/db.json', JSON.stringify(newNotesArray), (err) => {
         if (err) throw err;
         res.json(newNotesArray)
