@@ -3,14 +3,14 @@
 ## Description:
 This application was created to give users the ability to write and save notes to keep track of tasks. 
 
-## Usage Instructions: 
+## Usage instructions: 
 To utilize this application simply click the "get started" button on the main page. 
 ![Screen Shot 2021-04-23 at 11 37 49 AM](https://user-images.githubusercontent.com/73543476/115902761-6419ed80-a428-11eb-8fc8-54e73bae7655.png)
 
 Upon clicking the "get started" button the user will be re-directed to the main note-taking page. There the user can add new tasks in the form of notes and delete completed tasks as needed. 
 ![Screen Shot 2021-04-23 at 11 11 32 AM](https://user-images.githubusercontent.com/73543476/115901054-52cfe180-a426-11eb-95ee-f2844314d0bb.png)
 
-## Deployed application 
+## Deployed application:
 https://warm-badlands-79924.herokuapp.com/
 
 ## MIT license
