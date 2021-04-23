@@ -45,16 +45,16 @@ module.exports = (app) => {
       if (err) throw err;
       const notes = JSON.parse(data);
 
-      // notes.filter(({id}) => id !== parseInt(chosen));
+      const newNotesArray = notes.filter(({
+        id
+      }) => id !== chosen);
 
-      notes.filter(({id}) => id !== parseInt(chosen));
+      console.log(newNotesArray);
 
-      fs.writeFile('./db/db.json', JSON.stringify(notes), (err) => {
+      fs.writeFile('./db/db.json', JSON.stringify(newNotesArray), (err) => {
         if (err) throw err;
-        res.json(notes)
-      })
-    })
-
-  } )
+        res.json(newNotesArray)
+      });
+    });
+  });
 };
-
