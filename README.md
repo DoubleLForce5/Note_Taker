@@ -13,6 +13,13 @@ Upon clicking the "get started" button the user will be re-directed to the main 
 ## Deployed application
 https://warm-badlands-79924.herokuapp.com/
 
+## Tech 
+- JavaScript
+- Nodemon
+- UUID
+- Node.js
+- Express.js
+
 ## MIT license
 Copyright (c) 2021 Olivia Lopez
 
